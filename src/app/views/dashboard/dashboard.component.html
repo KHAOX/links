@@ -1,0 +1,63 @@
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-6 d-flex">
+            <img src="assets/img/logo_transparent.png" id="icon" alt="Login Icon" width="200px" />
+        </div>
+        <div class="col-md-6 d-flex flex-row-reverse">
+            <div class="p-2">
+                <button class="btn-sidebar" (click)="logout()">{{ 'app.btn.logout' | translate }}</button>
+            </div>
+            <div class="p-2">
+                {{ 'app.language' | translate }}: <span role="button" class="badge bg-secondary" (click)="switchLanguage('en')">en</span> &nbsp; <span role="button" class="badge bg-secondary" (click)="switchLanguage('es')">es</span>
+            </div>      
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3">
+            <div class="content-box profile text-center">
+                <img [src]="userdata['avatar']" id="icon" alt="Login Icon" width="200px" />
+                <h4>{{userdata['name']}}</h4>
+                <h4>{{userdata['email']}}</h4>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="content-box form-url">
+                <form [formGroup]="form" (submit)="createUrl()">
+                    <div class="input-group">
+                        <small>{{ 'app.modules.dashboard.formlinks.url' | translate }}</small>
+                        <input type="text" formControlName="url" [(ngModel)]="model.url" id="url">
+                        <div class="alert alert-danger" *ngIf="form.controls['url'].invalid && (form.controls['url'].dirty || form.controls['url'].touched)">
+                            {{ 'app.field' | translate }} "{{ 'app.modules.dashboard.formlinks.url' | translate }}" {{ 'app.required' | translate }}
+                        </div>
+                    </div>
+            
+                    <div class="input-group">
+                        <small>{{ 'app.modules.dashboard.formlinks.name' | translate }}</small>     
+                        <input type="text" formControlName="name" [(ngModel)]="model.name"  id="name">
+                        <div class="alert alert-danger" *ngIf="form.controls['name'].invalid && (form.controls['name'].dirty || form.controls['name'].touched)">
+                            {{ 'app.field' | translate }} "{{ 'app.modules.dashboard.formlinks.name' | translate }}" {{ 'app.required' | translate }}
+                        </div> 
+                    </div> 
+            
+                    <input type="submit" [disabled]="form.invalid" class="fadeIn fourth" value="{{ 'app.modules.dashboard.formlinks.btn_add' | translate }}">
+                </form>
+            </div>
+            <div class="content-box item-url" *ngFor="let item of links">
+                <div class="row">
+                    <div class="col-md-10">
+                        <h3>{{item['url']}}</h3>
+                    </div>
+                    <div class="col-md-2 d-flex flex-row-reverse">
+                        <img src="assets/img/trash.png" class="icon" alt="Delete Icon" (click)="deleteLink(item)" />
+                    </div>
+                </div>
+                <div class="row">
+                    <p>{{item['name']}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

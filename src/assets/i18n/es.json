@@ -1,0 +1,57 @@
+
+{
+    "app.name": "Links", 
+    "app.language": "Idioma", 
+
+    "app.welcome": "Bienvenid@",
+    "app.login.error": "Hubo un problema al intentar iniciar, intentalo mas tarde",
+    
+    "app.singup.create": "Registro exitoso, Inicia sesión",
+    "app.singup.error": "Hubo un problema al intentar registrate, intentalo mas tarde",
+
+    "app.request.create": "Registro creado",
+    "app.request.canceled": "Operación cancelada",
+    "app.request.delete.question": "Realmente desea eliminar este registro?",
+    "app.request.delete": "Registro eliminado!",
+    "app.request.error": "Error en el proceso, intentelo mas tarde.",
+
+    "app.field": "Campo", 
+    "app.required": "requerido", 
+
+    "app.btn.signup": "Registrarme", 
+    "app.btn.login": "Iniciar Sesión", 
+    "app.btn.logout": "Cerrar Sesión", 
+
+    "app.modules": {
+        
+        "login": {
+            "title": "Iniciar Sesión",
+            "email": "Tu correo",
+            "password": "Contraseña",
+            "btn_login": "Iniciar"
+        },
+
+        "singup": {
+            "title": "Registrase",
+            "name": "Nombre completo",
+            "email": "Tu Correo",
+            "password": "Contraseña",
+            "btn_signup": "Registrarme",
+            "create_text": "Al crear una cuenta, usted acepta las",
+            "terms_text": "Terminos de uso",
+            "and_text": "y",
+            "pricacy_text": "Politicas de privacidad"
+        },
+        
+        "dashboard": {
+            "formlinks": {
+                "url": "Url a Guardar",
+                "name": "Nombre de la Url",
+                "btn_add": "AGREGAR"
+            },
+            "profile": {
+                "loaderror": "No se pudo cargar la información del perfil."
+            }
+        }
+    }     
+}

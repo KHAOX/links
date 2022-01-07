@@ -1,0 +1,88 @@
+<div class="container">
+    <div class="col-md-12 d-flex flex-row-reverse">
+        <div class="p-2">
+            <button class="btn-sidebar" [hidden]="showRegisterForm" (click)="showRegisterForm = true">{{ 'app.btn.signup' | translate }}</button>
+            <button class="btn-sidebar" [hidden]="!showRegisterForm" (click)="showRegisterForm = false">{{ 'app.btn.login' | translate }}</button>
+        </div>
+        <div class="p-2">
+            {{ 'app.language' | translate }}: <span role="button" class="badge bg-secondary" (click)="switchLanguage('en')">en</span> &nbsp; <span role="button" class="badge bg-secondary" (click)="switchLanguage('es')">es</span>
+        </div>  
+    </div>
+</div>
+
+<div class="container">
+    <div class="col-md-12 text-center">
+        <div class="wrapper fadeInDown">
+
+            <div class="fadeIn first">
+                <img src="assets/img/logo_transparent.png" id="icon" alt="Login Icon" width="100px" />
+            </div>
+            
+            <div id="formContent" [hidden]="showRegisterForm">
+              <h2>{{ 'app.modules.login.title' | translate }}</h2>
+              <form [formGroup]="form" (submit)="login()">
+        
+                <div class="input-group">
+                    <small>{{ 'app.modules.login.email' | translate }}</small>
+                    <input type="text" formControlName="email" [(ngModel)]="model.email" placeholder="">
+                    <div class="alert alert-danger" *ngIf="form.controls['email'].invalid && (form.controls['email'].dirty || form.controls['email'].touched)">
+                        {{ 'app.field' | translate }} "{{ 'app.modules.login.email' | translate }}" {{ 'app.required' | translate }}
+                    </div>
+                </div>
+        
+                <div class="input-group">
+                    <small>{{ 'app.modules.login.password' | translate }}</small>     
+                    <input type="password" formControlName="password" [(ngModel)]="model.password" placeholder="">
+                    <div class="alert alert-danger" *ngIf="form.controls['password'].invalid && (form.controls['password'].dirty || form.controls['password'].touched)">
+                        {{ 'app.field' | translate }} "{{ 'app.modules.login.password' | translate }}" {{ 'app.required' | translate }}
+                    </div> 
+                </div> 
+        
+                <input type="submit" [disabled]="form.invalid" class="fadeIn fourth" value="{{ 'app.modules.login.btn_login' | translate }}">
+              </form>
+          
+            </div>
+
+            <div id="formContentRegister" [hidden]="!showRegisterForm">
+                <h2>{{ 'app.modules.singup.title' | translate }}</h2>
+                <form [formGroup]="formRegister" (submit)="singup()">
+          
+                  <div class="input-group">
+                      <small>{{ 'app.modules.singup.name' | translate }}</small>
+                      <input type="text" formControlName="name" [(ngModel)]="modelRegister.name" placeholder="">
+                      <div class="alert alert-danger" *ngIf="formRegister.controls['name'].invalid && (formRegister.controls['name'].dirty || formRegister.controls['name'].touched)">
+                        {{ 'app.field' | translate }} "{{ 'app.modules.singup.name' | translate }}" {{ 'app.required' | translate }}
+                      </div>
+                  </div>
+
+                  <div class="input-group">
+                    <small>{{ 'app.modules.singup.email' | translate }}</small>     
+                    <input type="email" formControlName="email" [(ngModel)]="modelRegister.email" placeholder="">
+                    <div class="alert alert-danger" *ngIf="formRegister.controls['email'].invalid && (formRegister.controls['email'].dirty || formRegister.controls['email'].touched)">
+                        {{ 'app.field' | translate }} "{{ 'app.modules.singup.email' | translate }}" {{ 'app.required' | translate }}
+                    </div> 
+                  </div> 
+          
+                  <div class="input-group">
+                      <small>{{ 'app.modules.singup.password' | translate }}</small>     
+                      <input type="password" formControlName="password" [(ngModel)]="modelRegister.password" placeholder="">
+                      <div class="alert alert-danger" *ngIf="formRegister.controls['password'].invalid && (formRegister.controls['password'].dirty || formRegister.controls['password'].touched)">
+                        {{ 'app.field' | translate }} "{{ 'app.modules.singup.password' | translate }}" {{ 'app.required' | translate }}
+                      </div> 
+                  </div> 
+          
+                  <input type="submit" [disabled]="formRegister.invalid" class="fadeIn fourth" value="{{ 'app.modules.singup.btn_signup' | translate }}">
+                </form>
+
+                <div id="formFooter">
+                    <p>
+                        {{ 'app.modules.singup.create_text' | translate }} <br> <a href="https://wearemo.com/" target="_blank">{{ 'app.modules.singup.terms_text' | translate }}</a> {{ 'app.modules.singup.and_text' | translate }} <a href="https://wearemo.com/why-mo/" target="_blank">{{ 'app.modules.singup.pricacy_text' | translate }}</a>
+                    </p>
+                </div>            
+            </div>
+
+        </div>
+    </div>
+</div>
+
+

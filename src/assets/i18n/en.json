@@ -1,0 +1,57 @@
+
+{
+    "app.name": "Links", 
+    "app.language": "Language", 
+
+    "app.welcome": "Welcome",
+    "app.login.error": "There was a problem trying to register, try again later",
+    
+    "app.singup.create": "Successful registration, Please login",
+    "app.singup.error": "There was a problem trying to register, try again later",
+
+    "app.request.create": "Record created",
+    "app.request.canceled": "Operation cancelled",
+    "app.request.delete.question": "Do you really want to delete this record?",
+    "app.request.delete": "Record removed!",
+    "app.request.error": "Error in the process, try again later",
+
+    "app.field": "Field", 
+    "app.required": "required", 
+
+    "app.btn.signup": "SIGNUP", 
+    "app.btn.login": "LOGIN", 
+    "app.btn.logout": "LOGOUT", 
+
+    "app.modules": {
+        
+        "login": {
+            "title": "Login",
+            "email": "You email",
+            "password": "Password",
+            "btn_login": "Login"
+        },
+
+        "singup": {
+            "title": "SINGUP",
+            "name": "Full name",
+            "email": "You email",
+            "password": "Password",
+            "btn_signup": "SINGUP",
+            "create_text": "By Creating account You agree to the",
+            "terms_text": "Terms of use",
+            "and_text": "and",
+            "pricacy_text": "Privacy Polycy"
+        },
+        
+        "dashboard": {
+            "formlinks": {
+                "url": "Url To Save",
+                "name": "Name of Url",
+                "btn_add": "ADD"
+            },
+            "profile": {
+                "loaderror": "Profile information could not be loaded"
+            }
+        }
+    }     
+}
